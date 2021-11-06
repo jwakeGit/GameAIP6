@@ -9,8 +9,8 @@ model = models.Sequential()
 model.add(layers.Conv2D(
     filters = 4,
     kernel_size = 4,
-    activation = 'relu',
-    input_shape = (150, 150, 3)
+    activation = 'relu', # Don't change
+    input_shape = (150, 150, 3) # Don't change
 ))
 
 #maxpooling layer
@@ -22,10 +22,10 @@ model.add(layers.MaxPooling2D(
 model.add(layers.Flatten())
 
 #hidden densly connected layer
-model.add(layers.Dense(4, activation = 'relu'))
+model.add(layers.Dense(4, activation = 'relu')) # Don't change activation
 
 #final densely connected layer
-model.add(layers.Dense(1, activation = 'sigmoid'))
+model.add(layers.Dense(1, activation = 'sigmoid')) # Don't change activation or units
 
 # Then, call model.compile()
 model.compile(
