@@ -1,8 +1,11 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing import image
 import matplotlib.pyplot as plt
+import os
 
 train_dir = 'cats_and_dogs_small/train/'
+train_cats_dir = 'cats_and_dogs_small/train/cats'
+train_dogs_dir = 'cats_and_dogs_small/train/dogs'
 validation_dir = 'cats_and_dogs_small/validation/'
 
 # Create the data generators (each should be an instance of ImageDataGenerator)
