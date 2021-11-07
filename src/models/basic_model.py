@@ -15,14 +15,14 @@ model.add(layers.Conv2D(
 
 #maxpooling layer
 model.add(layers.MaxPooling2D(
-    pool_size = (2, 2), #tuple/list
+    pool_size = (3, 3), #tuple/list
     padding = "same"
 ))
 
 #convolutional layer
 model.add(layers.Conv2D(
-    filters = 4,
-    kernel_size = 4,
+    filters = 9,
+    kernel_size = 9,
     activation = 'relu', # Don't change
     input_shape = (150, 150, 3) # Don't change
 ))
@@ -35,8 +35,8 @@ model.add(layers.MaxPooling2D(
 
 #convolutional layer
 model.add(layers.Conv2D(
-    filters = 4,
-    kernel_size = 4,
+    filters = 9,
+    kernel_size = 9,
     activation = 'relu', # Don't change
     input_shape = (150, 150, 3) # Don't change
 ))
@@ -47,19 +47,19 @@ model.add(layers.MaxPooling2D(
     padding = "same"
 ))
 
-#convolutional layer
-model.add(layers.Conv2D(
-    filters = 4,
-    kernel_size = 4,
-    activation = 'relu', # Don't change
-    input_shape = (150, 150, 4) # Don't change
-))
+# #convolutional layer
+# model.add(layers.Conv2D(
+#     filters = 9,
+#     kernel_size = 9,
+#     activation = 'relu', # Don't change
+#     input_shape = (150, 150, 3) # Don't change
+# ))
 
-#maxpooling layer
-model.add(layers.MaxPooling2D(
-    pool_size = (2, 2), #tuple/list
-    padding = "same"
-))
+# #maxpooling layer
+# model.add(layers.MaxPooling2D(
+#     pool_size = (2, 2), #tuple/list
+#     padding = "same"
+# ))
 
 #flatten layer
 model.add(layers.Flatten())
