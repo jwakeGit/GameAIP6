@@ -4,6 +4,10 @@ from tensorflow.keras import optimizers
 
 # Define a sequential model here
 model = models.Sequential()
+
+#hidden densly connected layer
+model.add(layers.Dense(16, activation = 'relu')) # Don't change activation
+
 # add more layers to the model...
 #convolutional layer
 model.add(layers.Conv2D(
@@ -63,9 +67,6 @@ model.add(layers.MaxPooling2D(
 
 #flatten layer
 model.add(layers.Flatten())
-
-#hidden densly connected layer
-model.add(layers.Dense(4, activation = 'relu')) # Don't change activation
 
 #final densely connected layer
 model.add(layers.Dense(1, activation = 'sigmoid')) # Don't change activation or units
