@@ -10,8 +10,13 @@ validation_dir = 'cats_and_dogs_small/validation/'
 
 # Create the data generators (each should be an instance of ImageDataGenerator)
 # Rescale all images from the [0...255] range to the [0...1] range
-train_datagen = ImageDataGenerator(rescale = 1/255) # TODO: Student
+# train_datagen = ImageDataGenerator(rescale = 1/255) # TODO: Student
 test_datagen = ImageDataGenerator(rescale = 1/255) # TODO: Student
+
+#data augmented generator
+train_datagen = ImageDataGenerator(
+    rescale = 1/255,
+    horizontal_flip = True)
 
 # Call flow_from_directory on each of your datagen objects
 train_generator = train_datagen.flow_from_directory(

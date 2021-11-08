@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 # TODO Student: update basic_model -> dropout_model to change which model gets trained
-from models.basic_model import model
+from models.dropout_model import model
 from preprocess import train_generator, validation_generator
 
 # Train the model defined in basic_model.py

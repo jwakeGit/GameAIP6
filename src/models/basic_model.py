@@ -5,13 +5,10 @@ from tensorflow.keras import optimizers
 # Define a sequential model here
 model = models.Sequential()
 
-#hidden densly connected layer
-model.add(layers.Dense(16, activation = 'relu')) # Don't change activation
-
 # add more layers to the model...
 #convolutional layer
 model.add(layers.Conv2D(
-    filters = 4,
+    filters = 16,
     kernel_size = 4,
     activation = 'relu', # Don't change
     input_shape = (150, 150, 3) # Don't change
@@ -25,7 +22,7 @@ model.add(layers.MaxPooling2D(
 
 #convolutional layer
 model.add(layers.Conv2D(
-    filters = 9,
+    filters = 16,
     kernel_size = 9,
     activation = 'relu', # Don't change
     input_shape = (150, 150, 3) # Don't change
@@ -39,7 +36,7 @@ model.add(layers.MaxPooling2D(
 
 #convolutional layer
 model.add(layers.Conv2D(
-    filters = 9,
+    filters = 16,
     kernel_size = 9,
     activation = 'relu', # Don't change
     input_shape = (150, 150, 3) # Don't change
@@ -51,25 +48,16 @@ model.add(layers.MaxPooling2D(
     padding = "same"
 ))
 
-# #convolutional layer
-# model.add(layers.Conv2D(
-#     filters = 9,
-#     kernel_size = 9,
-#     activation = 'relu', # Don't change
-#     input_shape = (150, 150, 3) # Don't change
-# ))
-
-# #maxpooling layer
-# model.add(layers.MaxPooling2D(
-#     pool_size = (2, 2), #tuple/list
-#     padding = "same"
-# ))
-
 #flatten layer
 model.add(layers.Flatten())
 
+#hidden densly connected layer
+model.add(layers.Dense(16, activation = 'relu')) # Don't change activation
+
 #final densely connected layer
 model.add(layers.Dense(1, activation = 'sigmoid')) # Don't change activation or units
+
+model.summary()
 
 # Then, call model.compile()
 model.compile(
@@ -78,6 +66,5 @@ model.compile(
     metrics=['acc']
 )
 
-model.summary()
 # Finally, train this compiled model by running:
 # python train.py
